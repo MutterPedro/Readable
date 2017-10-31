@@ -1,0 +1,10 @@
+.error-404 {
+    height: 72vh;
+}
+
+.error-404-image {
+    background: url('/lost.jpg') no-repeat center center;
+    background-size: cover;
+    width: 200px;
+    height: 200px;
+}

@@ -1,0 +1,28 @@
+.comments-text {
+    margin: 5px 15px;
+    opacity: 0.5;
+    font-style: italic;
+}
+
+.marginBottom0 {
+    margin-bottom: 0;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.comment-form {
+
+}
+.comment-form input{
+    margin-bottom: 8px !important;
+}
+
+.comment-form textarea {
+    margin-bottom: 8px !important;
+}
+
+.comment-form button {
+    float: right;
+}

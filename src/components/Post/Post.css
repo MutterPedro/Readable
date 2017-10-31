@@ -1,0 +1,38 @@
+.textAlignJustify {
+    text-align: justify;
+}
+
+.vote-btn {
+    border-radius: 50% !important;
+    font-size: 17px;
+    padding: 6px 8px 2px;
+    margin-right: 5px;
+}
+
+.add-post-btn{
+    border-radius: 50%;
+    background-color: #0056b3;
+    color: #fff;
+    font-weight: 600;
+    float: right;
+    bottom: 0;
+    z-index: 0;
+    position: fixed;
+    right: 0;
+    margin: 20px 10px;
+}
+
+.action-post-btn {
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.post-title {
+    color: #fff;
+}
+
+.post-title:hover {
+    color: #fff !important;
+    text-decoration: underline;
+}

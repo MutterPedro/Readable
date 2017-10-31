@@ -1,0 +1,13 @@
+.loading-spin {
+    background: url('/Spin.svg') no-repeat center center;
+    background-size: cover;
+    width: 100px;
+    height: 100px;
+    margin-top: 10%;
+}
+
+.center-block {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}

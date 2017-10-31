@@ -1,0 +1,31 @@
+.date-comment {
+    opacity: 0.5;
+}
+
+.comment-like-btn{
+    border-radius: 50%;
+    padding: 1px 5px;
+    margin-right: 5px;
+    color: #fff !important;
+}
+
+.comment-options-ctn {
+    float: right;
+    top: 0;
+    margin-bottom: auto;
+    color: #337ab7;
+    cursor: pointer;
+}
+
+.comment-options-ctn span {
+    margin-left: 10px;
+}
+
+.comment-options-ctn span:hover{
+    color:darkblue;
+}
+
+.comment-ctn {
+    display: inline-flex;
+    justify-content: space-between;
+}

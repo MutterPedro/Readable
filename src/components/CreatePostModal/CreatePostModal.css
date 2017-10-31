@@ -1,0 +1,33 @@
+.custom-modal {
+    position: absolute;
+    top: 115px;
+    left: 23%;
+    right: 23%;
+    bottom: 230px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    border-radius: 3px;
+    box-shadow: 0 3px 8px 0 rgba(0,0,0,.24), 0 3px 12px 0 rgba(0,0,0,.12);
+    min-width: 500px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+.custom-modal input, .custom-modal textarea .custom-modal div {
+    margin-bottom: 10px !important;
+}
+
+.custom-modal .btn-primary {
+    float: right;
+}
