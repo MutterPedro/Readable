@@ -1,6 +1,6 @@
 import React from 'react';
-import './InvalidID.css';
 import {Link} from "react-router-dom";
+import './InvalidID.css';
 
 const InvalidID = () => (
     <div className="error-404 container">

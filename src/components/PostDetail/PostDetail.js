@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import './PostDetail.css';
 import {connect} from 'react-redux';
 import {getPost, votePost, deletePost, showCreatePostModal} from "../../actions/Posts";
 import {getPostComments} from "../../actions/Comments";
@@ -11,6 +10,8 @@ import LoadingGauge from "../LoadingGauge/LoadingGauge";
 import CreatePostModal from "../CreatePostModal/CreatePostModal";
 import {Redirect} from "react-router-dom";
 import InvalidID from "../Errors/InvalidID/InvalidID";
+
+import './PostDetail.css';
 
 class PostDetail extends Component {
 

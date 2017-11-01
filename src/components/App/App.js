@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import {createStore, applyMiddleware, compose} from 'redux';
 import reducer from '../../reducers';
 import thunk from 'redux-thunk';
@@ -13,6 +12,7 @@ import Root from '../Root/Root';
 import PostDetail from '../PostDetail/PostDetail';
 import Footer from '../Footer/Footer';
 import NotFound from '../Errors/NotFound/NotFound';
+import './App.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -29,9 +29,10 @@ const App = () => (
         <ToastContainer/>
         <Provider store={store}>
             <Switch>
-                <Route exact path='/' component={Root} key="1"/>
-                <Route path='/postDetail/:id' component={PostDetail}/>
-                <Route path="/*" component={NotFound} key="404"/>
+                <Route exact path='/' component={Root}/>
+                <Route exact path='/:category' component={Root}/>
+                <Route path='/postDetail/:category/:id' component={PostDetail}/>
+                <Route path="/*" component={NotFound}/>
             </Switch>
         </Provider>
         <Footer/>

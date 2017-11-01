@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
-import './Categories.css';
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import {categories, changeCategory} from "../../actions/Categories";
 import {changeOrderBy} from "../../actions/Posts";
+import {Link} from "react-router-dom";
+import './Categories.css';
 
 const ORDER_FIELD = ["timestamp", "voteScore", "title", "body", "author"];
 
@@ -13,7 +14,7 @@ class Categories extends Component {
     }
 
     render(){
-        const {orderBy, changeCategory, changeOrderBy, categories, category} = this.props;
+        const {orderBy, changeOrderBy, categories, category = 'all'} = this.props;
         if(categories.length <= 0){
             categories.push({name: "react"});
         }
@@ -24,19 +25,19 @@ class Categories extends Component {
                 <p className="lead">
                     Navigate through the posts using the lower filters. Also you can comment, vote and create new posts.
                 </p>
-                <button onClick={() => changeCategory('all')} id={"all"}
+                <Link to="/" id={"all"}
                         className={"btn btn-primary btn-lg marginRight10 " + (category === "all" ? "disabled" : "")}>
                     All
-                </button>
+                </Link>
                 {categories.map(c => (
-                    <button
-                        onClick={() => changeCategory(c.name)}
+                    <Link
+                        to={"/"+c.name}
                         key={c.name}
                         className={"btn btn-primary btn-lg marginRight10 " + (category === c.name ? "disabled" : "")}
                         id={c.name}
                     >
                         {c.name.capitalize()}
-                    </button>
+                    </Link>
                 ))}
                 <br/><br/>
                 <div className="dropdown">
@@ -60,16 +61,13 @@ class Categories extends Component {
 
 Categories.propTypes = {
     orderBy: PropTypes.string.isRequired,
-    changeCategory: PropTypes.func.isRequired,
     changeOrderBy: PropTypes.func.isRequired,
-    categories: PropTypes.array.isRequired,
-    category: PropTypes.string.isRequired
+    categories: PropTypes.array.isRequired
 };
 
 const mapStateToProps = (state) => {
     return {
         categories: state.categories.categories,
-        category: state.categories.category,
         orderBy: state.posts.orderBy
     };
 };

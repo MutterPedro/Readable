@@ -10,13 +10,13 @@ class CommentForm extends Component{
             <form className="input-group comment-form" onSubmit={handleSubmit}>
                 <Field
                     placeholder="Author"
-                    className="form-control"
+                    className="form-control zindex0"
                     name="author"
                     component="input"
                 />
                 <Field
                     placeholder="Leave a comment"
-                    className="form-control"
+                    className="form-control zindex0"
                     name="body"
                     component="textarea"
                 />

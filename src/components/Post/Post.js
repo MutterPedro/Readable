@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './Post.css'
 import {Link} from "react-router-dom";
 import Comments from "../Comments/Comments";
+import './Post.css'
 
 const Post = ({commentsEnabled, title, timestamp, id, body, author, voteScore, category, like, dislike, edit, remove, comments = []}) => (
     <div className="panel panel-primary textAlignJustify">
         <div className="panel-heading">
-            <Link className="post-title" to={`/postDetail/${id}`}>{`@${author} - ${title}`}</Link>
+            <Link className="post-title" to={`/postDetail/${category}/${id}`}>{`@${author} - ${title}`}</Link>
             <span className="glyphicon glyphicon-trash action-post-btn" title="remove" onClick={remove}/>
             <span className="glyphicon glyphicon-pencil action-post-btn" title="edit" onClick={edit}/>
             <p>

@@ -58,7 +58,7 @@ it('run comments action without crash', () => {
             <Comments comments={[comment]}/>
         </Provider>
     );
-    test.props().store.getState().posts.post = post;
+    test.props().store.getState().fetchPosts.post = post;
 
     let instance = test.childAt(0).childAt(0).instance();
     const spyAdd = sinon.spy(instance, "add");

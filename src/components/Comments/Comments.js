@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
-import './Comments.css';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {addComment, updateComment, voteComment, deleteComment} from '../../actions/Comments';
 import CommentForm from './CommentForm';
 import {toast} from 'react-toastify';
 import Comment from "../Comment/Comment";
+import './Comments.css';
 
 class Comments extends Component {
 

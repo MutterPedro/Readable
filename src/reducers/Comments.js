@@ -8,19 +8,16 @@ const initialState = {
 export function comments(state = initialState, action = {}) {
     switch (action.type){
         case ADD_COMMENT:
-            return {};
         case VOTE_COMMENT:
-            return {};
         case GET_COMMENT:
-            return {};
         case DELETE_COMMENT:
-            return {};
         case UPDATE_COMMENT:
-            return{};
+            return {};
         case GET_POST_COMMENTS:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 comments: action.comments
-            });
+            };
         default:
             return state;
     }

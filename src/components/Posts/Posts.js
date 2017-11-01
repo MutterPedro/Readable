@@ -1,10 +1,12 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+import {toast} from "react-toastify";
+
 import {votePost, deletePost, getPosts, showCreatePostModal, categoryPosts} from "../../actions/Posts";
 import Post from "../Post/Post";
 import LoadingGauge from "../LoadingGauge/LoadingGauge";
+
 import "./Posts.css";
-import {toast} from "react-toastify";
 
 class Posts extends Component {
     vote = (id, option = "upVote") => {
@@ -12,7 +14,7 @@ class Posts extends Component {
             toast.error("null ID!");
         }
 
-        this.props.votePost(id, option).then(() => this.posts(this.props.category)).catch(
+        this.props.votePost(id, option).then(() => this.fetchPosts(this.props.category)).catch(
             (error) => toast.error(error.message)
         );
     };
@@ -44,7 +46,7 @@ class Posts extends Component {
         }
     };
 
-    posts = (category = 'all') => {
+    fetchPosts = (category = 'all') => {
         if (category !== 'all')
             this.props.categoryPosts(category).then(null).catch(
                 (error) => toast.error(error.message)
@@ -60,12 +62,14 @@ class Posts extends Component {
     };
 
     componentDidMount() {
-        this.posts();
+        const {category} = this.props;
+        this.fetchPosts(category);
     }
 
     componentWillUpdate(nextProps) {
-        if(nextProps.category !== this.props.category){
-            this.posts(nextProps.category);
+        const {category} = nextProps
+        if(category !== this.props.category){
+            this.fetchPosts(category);
         }
     }
 
@@ -103,7 +107,6 @@ const mapStateToProps = (state) => {
     return {
         posts: state.posts.posts,
         showingModal: state.posts.showingCreateModal,
-        category: state.categories.category,
         orderBy: state.posts.orderBy,
         loadingPosts: state.posts.loadingPosts
     };

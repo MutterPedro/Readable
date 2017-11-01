@@ -11,45 +11,48 @@ const initialState = {
 export function posts(state = initialState, action = {}) {
     switch (action.type){
         case ADD_POST:
-            return Object.assign({}, state, {
+        case UPDATE_POST:
+            return {
+                ...state,
                 loadingPosts: true
-            });
+            };
         case GET_POST:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 post: action.post
-            });
+            };
         case GET_POSTS:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 posts: action.posts,
                 post: undefined,
                 showingCreateModal: false,
                 loadingPosts: false
-            });
+            };
         case DELETE_POST:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 post: undefined
-            });
-        case VOTE_POST:
-            return state;
-        case UPDATE_POST:
-            return Object.assign({}, state, {
-                loadingPosts: true
-            });
+            };
         case SHOW_CREATE_POST_MODAL:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 showingCreateModal: action.show,
                 post: action.post
-            });
+            };
         case CHANGE_ORDER_BY:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 orderBy: action.orderBy
-            });
+            };
         case GET_CATEGORY_POST:
-            return Object.assign({}, state, {
+            return {
+                ...state,
                 posts: action.posts,
                 loadingPosts: false,
                 showingCreateModal: false
-            });
+            };
+        case VOTE_POST:
         default:
             return state;
     }
